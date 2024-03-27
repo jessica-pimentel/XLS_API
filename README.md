@@ -1,6 +1,6 @@
 # API de Configuração e Criação de Arquivos XLS
 
-Esta API é responsável por gerenciar configurações e criar arquivos XLS (Excel). Ela oferece funcionalidades para configurar parâmetros específicos e gerar arquivos XLS com base nessas configurações.
+Essa API é responsável por gerenciar configurações e criar arquivos XLS (Excel). Ela oferece funcionalidades para configurar parâmetros específicos e gerar arquivos XLS com base nessas configurações.
 
 ## Funcionalidades
 
