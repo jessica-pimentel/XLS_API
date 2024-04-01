@@ -18,7 +18,7 @@ namespace xls_Domain.Extensions
             return value.ToString("ddMMyyHHmmssfffff"); //with miliseconds
         }
 
-        public static string FormatDatePtBR(this DateTime value, bool hours = false, string year = "yyyy")
+        public static string FormatDatePtBRs(this DateTime value, bool hours = false, string year = "yyyy")
         {
             var d = hours == true ? $"{{0:dd/MM/{year} HH:mm:ss}}" : $"{{0:dd/MM/{year}}}";
 
