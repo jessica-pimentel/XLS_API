@@ -40,22 +40,25 @@ namespace xls_Domain.Service.Global
             try
             {
                 // Supondo que você possa obter os detalhes do para preencher o email aqui dentro do MailService
-                var obj = new ArrayList();
+                var obj = new List<string>();
+                obj.Add("Primeiro");
+                obj.Add("Segundo");
+                obj.Add("Terceiro");
 
-                var preAgreementValues = (from _r in obj
-                                          select new Titulo
+                var objectValues = (from _r in obj
+                                          select new 
                                           {
                                               tId = logId,
                                               Teste = "teste",
-                                              Teste = "teste",
-                                              Teste = "teste",
+                                              Teste2 = "teste",
+                                              Teste3 = "teste",
                                           });
 
                 var body = new StringBuilder();
 
                 // Adicionando cabeçalho e informações gerais
-                body.Append($@"<strong>{obj.FirstOrDefault().Network.ToUpper()}</strong> Segue em anexo resumo do pré-acordo
-                            <br /><br />Data de realização: <strong>{obj.FirstOrDefault().CreatedAt.ToString("dd/MM/yyyy")}</strong><br />");
+                body.Append($@"<strong>{obj}</strong> Segue em anexo resumo do pré-acordo
+                            <br /><br />Data de realização: <strong>{obj}</strong><br />");
 
                 // Adicionando detalhes específicos do pré-acordo
                 body.Append("<strong>Dados Oferta:<br /></strong>");
@@ -88,7 +91,7 @@ namespace xls_Domain.Service.Global
 
                     // Anexar os arquivos gerados
                     var excelFilePath = await _excelService.GenerateExcelAsync(simulationIds, logId);
-                    var pdfFilePath = await _pdfService.GeneratePreAgreementPDF(preAgreementValues, logId, false);
+                    var pdfFilePath = await _pdfService.GenerateCompletePDF(objectValues, logId, false);
                     mail.Attachments.Add(new Attachment(excelFilePath));
                     mail.Attachments.Add(new Attachment(pdfFilePath));
 

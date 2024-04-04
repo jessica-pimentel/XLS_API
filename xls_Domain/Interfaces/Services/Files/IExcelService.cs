@@ -9,5 +9,6 @@ namespace xls_Domain.Interfaces.Services.Files
     public interface IExcelService
     {
         string Generate<T>(IEnumerable<T> dataSource, bool sendMail = false);
+        Task<string> GenerateExcelAsync(IEnumerable<Guid> simulationIds, Guid logId);
     }
 }
