@@ -54,9 +54,9 @@ namespace xls_Domain.Service.Files
             headerTable.AddCell(logoCell);
 
             // Adiciona as informações ao cabeçalho
-            headerTable.AddCell(new iText.Layout.Element.Cell(1, 1).SetBorder(Border.NO_BORDER).Add(new iText.Layout.Element.Paragraph("Panutrir").SetFont(font).SetFontSize(12).SetTextAlignment(TextAlignment.LEFT)));
+            headerTable.AddCell(new iText.Layout.Element.Cell(1, 1).SetBorder(Border.NO_BORDER).Add(new iText.Layout.Element.Paragraph("empresa").SetFont(font).SetFontSize(12).SetTextAlignment(TextAlignment.LEFT)));
             headerTable.AddCell(new iText.Layout.Element.Cell(1, 1).SetBorder(Border.NO_BORDER).Add(new iText.Layout.Element.Paragraph(DateTime.Now.ToString("dd/MM/yyyy")).SetFont(font).SetFontSize(10).SetTextAlignment(TextAlignment.CENTER)));
-            headerTable.AddCell(new iText.Layout.Element.Cell(1, 1).SetBorder(Border.NO_BORDER).Add(new iText.Layout.Element.Paragraph("Email para contato: SAC\nsac@panutrir.com.br\nFone: (43) 3548-1421").SetFont(font).SetFontSize(10).SetTextAlignment(TextAlignment.RIGHT)));
+            headerTable.AddCell(new iText.Layout.Element.Cell(1, 1).SetBorder(Border.NO_BORDER).Add(new iText.Layout.Element.Paragraph("Email para contato: SAC\nsac@empresa.com.br\nFone: (xx) xxxx-xxxx").SetFont(font).SetFontSize(10).SetTextAlignment(TextAlignment.RIGHT)));
 
             // Adiciona o cabeçalho ao documento
             document.Add(headerTable);
@@ -75,25 +75,25 @@ namespace xls_Domain.Service.Files
 
             // Adiciona os títulos das colunas
             dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("CodRede").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Rede").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Valor Simulado").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Investimento Pan").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Investimento Rede").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Periodo Inicial").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
-            //dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Periodo Final").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
+            dataTable.AddHeaderCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph("Teste").SetFont(font).SetFontSize(12).SetBackgroundColor(colorTitle).SetTextAlignment(TextAlignment.CENTER)));
 
             // Adiciona dados às células
             foreach (var resultItem in models)
             {
                 dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.CodNetwork.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Network.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.ValueOffer.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.MarginPan.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.MarginNetwork.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.PeriodInitial.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
-                //dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.PeriodFinal.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
+                dataTable.AddCell(new iText.Layout.Element.Cell(1, 1).Add(new iText.Layout.Element.Paragraph(resultItem.Teste.ToString()).SetFont(font).SetFontSize(11).SetTextAlignment(TextAlignment.CENTER)));
             }
 
             document.Add(dataTable);

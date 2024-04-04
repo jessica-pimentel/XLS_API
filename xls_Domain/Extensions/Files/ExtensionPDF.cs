@@ -45,7 +45,7 @@ namespace xls_Domain.Extensions.Files
                         .SetFont(font)
                         .SetFontSize(5)
                         .SetFontColor(ColorConstants.GRAY)
-                        .ShowTextAligned($"GERADO EM {DateTime.Now.FormatDatePtBRs(true)} PELA PANUTRIR - CONTATO (43) 3548-1421 - https://panutrir.com.br", coordX, footerY - 20, TextAlignment.CENTER)
+                        .ShowTextAligned($"GERADO EM {DateTime.Now.FormatDatePtBRs(true)} PELA EMPRESA - CONTATO (XX) XXXX-XXXX - https://panutrir.com.br", coordX, footerY - 20, TextAlignment.CENTER)
                         .Close();
                 }
             }
