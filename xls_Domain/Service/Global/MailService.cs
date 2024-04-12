@@ -109,5 +109,33 @@ namespace xls_Domain.Service.Global
                 return false;
             }
         }
+
+        public async Task<bool> SendFile(string fileName, string recipientEmail)
+        {
+            try
+            {
+                using (var mail = new MailMessage())
+                {
+                    mail.From = new MailAddress(_mailSettings.System.FromEmail, "EMPRESA", Encoding.UTF8);
+                    mail.To.Add(new MailAddress(recipientEmail));
+                    mail.IsBodyHtml = true;
+
+                    // Anexar os arquivos gerados
+                    mail.Attachments.Add(new Attachment(fileName));
+
+                    using (var smtp = new SmtpClient(_mailSettings.System.STMP, _mailSettings.System.Port))
+                    {
+                        smtp.Credentials = new NetworkCredential(_mailSettings.System.UserName, _mailSettings.System.Password);
+                        smtp.EnableSsl = _mailSettings.System.UseSSL;
+                        await smtp.SendMailAsync(mail);
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

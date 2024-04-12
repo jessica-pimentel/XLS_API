@@ -9,6 +9,6 @@ namespace xls_Domain.Interfaces.Global.Mail
     public interface IMailService
     {
         Task<bool> SendFileEmailAsync(string recipientEmail, string subject, IEnumerable<Guid> simulationIds, Guid logId);
-
+        Task<bool> SendFile(string fileName, string recipientEmail);
     }
 }
