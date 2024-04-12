@@ -42,5 +42,35 @@ namespace xls_Domain.Service.Files
             return $"{_xlsTradeSettings.EndPointOut}/tmp/{fileName}";
         }
 
+        public async Task<string> GenerateExcelAsync(IEnumerable<Guid> simulationIds, Guid logId)
+        {
+             var obj = new List<string>();
+            obj.Add("Primeiro");
+            obj.Add("Segundo");
+            obj.Add("Terceiro");
+
+            var dataToExport = (from _r in obj
+                                select new
+                                {
+                                    tId = logId,
+                                    Teste = "teste",
+                                    Teste2 = "teste",
+                                    Teste3 = "teste",
+                                }).Distinct();
+
+            var fileName = $"PreAgreement_{logId}_{DateTime.Now:yyyyMMddHHmmss}.xlsx";
+            var file = new FileInfo($"{_xlsTradeSettings.DirectoryOut}\\tmp\\{fileName}");
+
+            using (var package = new ExcelPackage(file))
+            {
+                var workSheet = package.Workbook.Worksheets.Add("PreAgreementData");
+                workSheet.Cells.LoadFromCollection(dataToExport, true, OfficeOpenXml.Table.TableStyles.Medium6);
+                workSheet.Cells["A1:H1"].Style.Font.Bold = true; // Exemplo simples de formatação
+                package.Save();
+            }
+
+            return $"{_xlsTradeSettings.EndPointOut}/tmp/{fileName}";
+        }
+
     }
 }
