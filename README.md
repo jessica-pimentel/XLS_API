@@ -4,8 +4,7 @@ Essa API é responsável por gerenciar configurações e criar arquivos XLS (Exc
 
 ## Funcionalidades
 
-- **Configuração Dinâmica:** Permite configurar diversos aspectos do processo de geração de arquivos XLS, como formatação, estilos, campos obrigatórios, entre outros.
-- **Configuração Dinâmica:** Permite configurar diversos aspectos do processo de geração de arquivos PDF, como formatação, estilos, campos obrigatórios, entre outros.
+- **Configuração Dinâmica:** Permite configurar diversos aspectos do processo de geração de arquivos XLS e PDF, como formatação, estilos, campos obrigatórios, entre outros.
 - **Criação de Arquivos XLS e PDF:** Gera arquivos XLS com base nas configurações fornecidas, incluindo dados dinâmicos provenientes de fontes de dados externas.
 - **Endpoint RESTful:** Oferece uma interface RESTful para interação com a API, permitindo integração fácil com outros sistemas.
 
