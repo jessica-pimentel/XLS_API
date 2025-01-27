@@ -19,7 +19,7 @@ Essa API é responsável por gerenciar configurações e criar arquivos XLS (Exc
 - **[iText.Kernel](https://itextpdf.com/en/products/itext-7/itext-7-core)**: Parte do iText 7, o núcleo que provê funcionalidades fundamentais para a manipulação de PDF.
 - **[iText.Layout](https://itextpdf.com/en/products/itext-7/itext-7-core)**: Também parte do iText 7, esta biblioteca é usada para manipular elementos de alto nível como parágrafos, listas e tabelas no documento PDF.
 
-## Pacotes Utilizados para Mail 
+## Pacotes Utilizados para EMail 
 
 - **System.Net.Mail**: Namespace que fornece classes para enviar e-mails através do protocolo SMTP (Simple Mail Transfer Protocol), incluindo `MailMessage` para representar um e-mail, `SmtpClient` para enviar e-mails e `Attachment` para lidar com anexos.
 - **System.Net**: Namespace que fornece classes para trabalhar com redes em geral, incluindo `NetworkCredential` para fornecer credenciais de autenticação para o servidor SMTP.
